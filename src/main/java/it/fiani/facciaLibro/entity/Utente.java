@@ -1,6 +1,6 @@
 package it.fiani.facciaLibro.entity;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -8,6 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 public class Utente {
@@ -27,8 +30,10 @@ public class Utente {
 	@OneToMany
 	private List<Post> listaPost;
 
-	private LocalDateTime instanteCreazione;
-	private LocalDateTime instanteUltimoAggiornamento;
+	@CreationTimestamp
+	private OffsetDateTime instanteCreazione;
+	@UpdateTimestamp
+	private OffsetDateTime instanteUltimoAggiornamento;
 
 	public Long getId() {
 		return id;
@@ -78,28 +83,28 @@ public class Utente {
 		this.numeroTelefono = numeroTelefono;
 	}
 
-	public LocalDateTime getInstanteCreazione() {
-		return instanteCreazione;
-	}
-
-	public void setInstanteCreazione(LocalDateTime instanteCreazione) {
-		this.instanteCreazione = instanteCreazione;
-	}
-
-	public LocalDateTime getInstanteUltimoAggiornamento() {
-		return instanteUltimoAggiornamento;
-	}
-
-	public void setInstanteUltimoAggiornamento(LocalDateTime instanteUltimoAggiornamento) {
-		this.instanteUltimoAggiornamento = instanteUltimoAggiornamento;
-	}
-
 	public List<Post> getListaPost() {
 		return listaPost;
 	}
 
 	public void setListaPost(List<Post> listaPost) {
 		this.listaPost = listaPost;
+	}
+
+	public OffsetDateTime getInstanteCreazione() {
+		return instanteCreazione;
+	}
+
+	public void setInstanteCreazione(OffsetDateTime instanteCreazione) {
+		this.instanteCreazione = instanteCreazione;
+	}
+
+	public OffsetDateTime getInstanteUltimoAggiornamento() {
+		return instanteUltimoAggiornamento;
+	}
+
+	public void setInstanteUltimoAggiornamento(OffsetDateTime instanteUltimoAggiornamento) {
+		this.instanteUltimoAggiornamento = instanteUltimoAggiornamento;
 	}
 
 	@Override
