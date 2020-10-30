@@ -1,0 +1,29 @@
+<!doctype html>
+<html xmlns:th="http://www.tymeleaf.org" lang="it">
+
+<head>
+<title>Index Utenti</title>
+
+</head>
+
+<body>
+
+	<h1>Lista Utenti</h1>
+	
+	<table>
+		<tbody>
+			<tr th:each="u: ${listaUtenti}">
+				<td th:text="${u.nome}"></td>
+				<td th:text="${u.cognome}"></td>
+				<td th:text="${u.eta}"></td>
+				<td th:text="${u.indirizzoResidenza}"></td>
+				<td th:text="${u.numeroTelefono}"></td>
+
+			</tr>
+		</tbody>
+	</table>
+	<a href="/utenti/new">Aggiungi utente</a>
+
+</body>
+
+</html>

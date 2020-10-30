@@ -1,0 +1,33 @@
+<!doctype html>
+<html xmlns:th="http://www.tymeleaf.org" lang="it">
+
+<head>
+<title>Index Utenti</title>
+<link rel="stylesheet" href="facciaLibroCSS.css">
+</head>
+
+<body>
+
+<h1>Faccialibro</h1> 
+	<h1>Lista Post</h1>
+
+
+	<table>
+		<tbody>
+			<tr th:each="p: ${listaPost}">
+				<td th:text="${p.titolo}"></td>
+				<td th:text="${p.testoPost}"></td>
+		  <!--  <td th:text="${p.utenteCreazione.id}"></td>  -->
+				<td th:text="${p.dataCreazione}"></td>
+				<td><a th:href="@{/utenti/} + ${p.utenteCreazione.id}"><input type="submit" value="info utente"></a></td>
+				<td><a th:href="${p.id} + '/delete' "><input type="submit" value="cancella Post"></a></td>
+				
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<a href="/post/new"><input type="submit" value="crea post"></a>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+Creare un applicazione FacciaLibro v0.1. VVV
+
+(Creare tutta la struttura portante per l'inserimento di un nuovo utente,
+ e per la lettura di un utente in base all'ID) VVV
+
+Un utente, oltre ai campi ovvii, dovrà avere un Indirizzo di residenza.
+Degli eventuali riferimenti telefonici. VVV
+
+Nella pagina principale di faccialibro, deve apparire una lista di tutti i post 
+inseriti dai vari utenti. VVV
+
+Ogni post dovrà avere un Titolo (header), un testo (paragraph), il nome dell'utente
+ che l'ha postato, e la data di creazione del post. VVV
+
+Nella pagina principale, dovrà esserci un pulsante "Aggiungi", che mi farà aprire una
+ pagina con un form, in cui posso creare un nuovo post, inserendo un titolo, un testo,
+  e l'id di un utente esistente.VVV
+
+Nella pagina principale, se clicco sul nome di un utente, mi apre una pagina con i 
+dettagli di quell'utente, ed una lista di tutti i SUOI post.VVV
+
+Nella pagina principale, vicino ad ogni post, deve esserci un pulsante che mi permette
+ di cancellare quel determinato post.VVV
+
+Ogni Entity, deve avere necessariamente un campo relativo all'istante di creazione. VVV
+
+Inoltre, voglio una pagina raggiungibile da /statistiche VVV
+
+Questa pagina deve dirmi:
+- Il numero totale di post presenti VVV
+- il numero totale di utenti registrati VVV
+- il nome dell'utente che ha inserito più post XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+- Nuovo requisito:
+-- Implementare un controllo, che non permetta di inserire due utenti che hanno la stessa
+ coppia nome-cognome.
+
+Se c'è Stefano - Ricci, non posso inserire un altro stefano - ricci
+A prescindere da maiuscole e minuscole.
+
+Quindi anche se provo ad inserire un nuovo utente STEFANO - RICCI, non me lo deve aggiungere
+
+1- Nella pagina in cui vengono elencati tutti i post, i post dovranno essere mostrati IN ORDINE CRONOLOGICO DECRESCENTE  ossia, il più recente in alto.
+
+2- Nella pagina in cui c'è la lista degli utenti, (possibilmente in alto a destra) dovrà esserci un form, per FILTRARE GLI UTENTI IN BASE AL NOME

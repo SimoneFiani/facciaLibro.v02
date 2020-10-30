@@ -1,0 +1,83 @@
+<!doctype html>
+<html xmlns:th="http://www.tymeleaf.org" lang="it">
+
+<head>
+<title>Home FacciaLibro</title>
+<meta charset="utf-8">
+<meta name="description" content="Socialnetwork abusivo">
+<meta name="author" content="Mbutoz">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+	rel="stylesheet">
+<link rel="stylesheet" href="facciaLibroCSS.css">
+</head>
+
+<body>
+
+	<div>
+		<h1>Benvenuti in FacciaLibro</h1>
+	</div>
+	<br>
+	<div>
+		<h2>Lista post:</h2>
+	</div>
+
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<table class="table table-hover">
+
+					<thead class="thead thead-dark">
+						<tr>
+							<th>Titolo</th>
+							<th>Post</th>
+							<th>Utente</th>
+							
+							<th><a href="/post/new"><em
+									class="fas fa-plus-circle text-primary"></em></a></th>
+							<th></th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr th:each="a: ${blabla}">
+							<td th:text="${a.nome}"></td>
+							<td th:text="${a.cognome}"></td>
+							<td th:text="${a.annoDiNascita}"></td>
+
+							<td><a th:href="${a.id}"> <em
+									class="fas fa-info-circle text-info"></em>
+							</a></td>
+
+							<td><a th:href="@{/registi/} + ${a.id} + '/edit'"><em
+									class="fas fa-pen text-warning"></em></a></td>
+
+							<td><a th:href="${a.id} + '/delete'"><em
+									class="fas fa-trash text-danger"></em></a></td>
+
+						</tr>
+					</tbody>
+				</table>
+
+				<p>
+					<span th:if="${#lists.isEmpty(listaRegisti)}"> Non ci sono
+						registi </span> <span th:unless="${#lists.isEmpty(listaRegisti)}">
+						Ci sono <span th:text="${#lists.size(listaRegisti)}"></span>
+						registi
+					</span>
+				</p>
+
+			</div>
+		</div>
+	</div>
+
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+</body>
+
+</html>

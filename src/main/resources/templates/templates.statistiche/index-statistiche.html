@@ -1,0 +1,24 @@
+<!doctype html>
+<html xmlns:th="http://www.tymeleaf.org" lang="it">
+
+<head>
+<title>Index Utenti</title>
+<link rel="stylesheet" href="facciaLibroCSS.css">
+</head>
+
+<body>
+
+	<h1>Faccialibro</h1>
+	<h1>Lista Post</h1>
+
+	<p>numero post inseriti su FacciaLibro:</p>
+	<p th:text="${numeroPost}">
+	<p>numero utenti registrati su FacciaLibro:</p>
+	<p th:text="${numeroUtentiRegistrati}">
+	<p>utente con piu post su FacciaLibro:</p>
+	<p th:text="${cognomeUtenteConPiuPost}">
+
+		<a href="/post/new"><input type="submit" value="crea post"></a>
+</body>
+
+</html>

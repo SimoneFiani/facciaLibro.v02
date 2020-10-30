@@ -1,0 +1,31 @@
+<!doctype html>
+<html xmlns:th="http://www.tymeleaf.org" lang="it">
+
+<head>
+<title>Index Utenti</title>
+
+</head>
+
+<body>
+
+	<h1>Info Utente</h1>
+
+	<h2 th:text="${utente.nome}"></h2> 
+	<p>lista post: </p>
+	<br>
+ 	<table>
+		<tbody>
+		
+			<tr th:each="p: ${listaPostUtente}">
+				<td th:text="${p.titolo}"></td>
+				<td th:text="${p.testoPost}"></td>
+				<td th:text="${p.dataCreazione}"></td>	
+			</tr>
+		</tbody>
+	</table>  
+	<br>
+	<a href="/utenti/">torna alla home page utenti</a>
+
+</body>
+
+</html>
