@@ -1,4 +1,4 @@
-package it.fiani.facciaLibro.entity;
+package it.fiani.facciaLibro.DTO;
 
 public class UtenteDTO {
 
